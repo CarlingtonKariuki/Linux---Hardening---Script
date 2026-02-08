@@ -1,32 +1,49 @@
-# 🛡️ Linux Hardener
+# Linux Hardener
 
-An automated Linux hardening tool built with Python to help users secure their Linux systems using best practices. It includes firewall configuration, service management, SSH hardening, USB port control, and filesystem protections — all in an interactive or automated CLI.
+A lightweight Linux hardening toolkit that applies common security controls from a single CLI. It targets firewall setup, service hardening, SSH configuration, USB storage lockdown, and basic file protection.
 
-## 🔐 Features
+## Features
+- Firewall configuration for UFW (Debian/Ubuntu/Kali) and firewalld (Fedora/CentOS/RHEL)
+- Disable unnecessary services defined in config
+- SSH hardening (root login and port)
+- Optional USB storage disablement
+- Filesystem protection for specified files
+- Dry-run mode to preview changes
 
-- 🔥 Configure UFW or iptables firewall
-- ❌ Disable unnecessary services
-- 🔑 SSH configuration hardening
-- 🔌 Optionally disable USB ports
-- 📁 File permissions and auditing
-- ⚙️ Works on multiple Linux distributions
-- 🧠 Interactive CLI prompts for custom setups
+## Supported Distros
+- Ubuntu, Debian, Kali, Linux Mint, Pop!_OS
+- Fedora, CentOS, RHEL, Rocky, AlmaLinux, Oracle Linux
 
-## 🚀 How to Use
-
-### 🖥️ Interactive Mode
+## Install
 ```bash
-sudo python3 hardener.py --interactive
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+pip install -e .
+```
 
-#Automated Mode
-#sudo python3 hardener.py --auto --disable-usb --harden-ssh
-#Supported Distros
-#ubuntu, Debian, Kali linux, CentOS.
-#Installation
-#Clone the repository:
-#git clone https://github.com/YOUR_USERNAME/linux-hardener.git
-#cd linux-hardener
-#Make the script executable:
-#chmod +x hardener.py
-#Run the script:
-#sudo python3 hardener.py
+## Configuration
+Copy the example config and edit it:
+```bash
+cp config.example.json config.json
+```
+
+## Usage
+Run all tasks (default):
+```bash
+sudo linux-hardener
+```
+
+Run a single task:
+```bash
+sudo linux-hardener --harden-ssh
+```
+
+Dry-run (no changes applied):
+```bash
+linux-hardener --all --dry-run
+```
+
+## Notes
+- SSH changes can lock you out if the new port is not allowed through the firewall.
+- `chattr +i` makes files immutable; remove immutability before editing.

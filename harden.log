@@ -1,8 +1,0 @@
-2025-03-22 16:17:20,454 - INFO - Firewall configured successfully.
-2025-03-22 16:17:21,995 - INFO - Disabled service: avahi-daemon
-2025-03-22 16:17:22,056 - INFO - Disabled service: cups
-2025-03-22 16:17:22,128 - INFO - Disabled service: rpcbind
-2025-03-22 16:17:22,188 - INFO - Secured file: /etc/passwd
-2025-03-22 16:17:22,228 - INFO - Secured file: /etc/shadow
-2025-03-22 16:17:22,423 - INFO - SSH hardened: Root login disabled, Port changed.
-2025-03-22 16:19:46,446 - INFO - USB storage disabled.
