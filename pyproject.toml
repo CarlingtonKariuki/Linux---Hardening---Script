@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux_hardener"
+version = "1.1.0"
+description = "Linux system hardening toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["distro>=1.8"]
+
+[project.scripts]
+linux-hardener = "linux_hardener.cli:main"
+harden = "linux_hardener.cli:main"

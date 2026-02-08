@@ -1,5 +1,8 @@
 # Linux Hardener
 
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 A lightweight Linux hardening toolkit that applies common security controls from a single CLI. It targets firewall setup, service hardening, SSH configuration, USB storage lockdown, and basic file protection.
 
 ## Features
@@ -43,6 +46,10 @@ Dry-run (no changes applied):
 ```bash
 linux-hardener --all --dry-run
 ```
+
+## Documentation
+- `docs/USAGE.md`
+- `docs/CONFIG.md`
 
 ## Notes
 - SSH changes can lock you out if the new port is not allowed through the firewall.
